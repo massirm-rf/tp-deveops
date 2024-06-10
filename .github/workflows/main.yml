@@ -22,7 +22,7 @@ jobs:
 
      #finally build your app with the latest command
       - name: Build and test with Maven
-        run: mvn clean install --file API/simple-api-student-main/pom.xml -B
+        run: mvn clean install --file API/simpleapi/pom.xml -B
   
   # define job to build and publish docker image
   build-and-push-docker-image:
@@ -41,7 +41,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}s
-
+        shell : bash
 
       - name: Build image and push backend
         uses: docker/build-push-action@v3
