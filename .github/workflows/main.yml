@@ -69,5 +69,6 @@ jobs:
           context: ./http-server
           # Note: tags has to be all lower-case
           tags:  ${{secrets.DOCKER_HUB_USERNAME}}/tp-devops-httpd:latest
-          
+          push: ${{ github.ref == 'refs/heads/main' }}
+
 
