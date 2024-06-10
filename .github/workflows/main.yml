@@ -18,8 +18,8 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'adopt'
+          distribution: 'corretto'
 
      #finally build your app with the latest command
       - name: Build and test with Maven
-        run: mvn clean install --file API/simpleapi/pom.xml
+        run: mvn clean install --file API/simple-api-student-main/pom.xml
