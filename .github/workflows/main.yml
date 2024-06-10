@@ -51,6 +51,7 @@ jobs:
           context: ./API/simpleapi
           # Note: tags has to be all lower-case
           tags:  ${{secrets.DOCKER_HUB_USERNAME}}/tp-devops-simple-api:latest
+          push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push database
         uses: docker/build-push-action@v3
@@ -59,7 +60,7 @@ jobs:
           context: ./postgres
           # Note: tags has to be all lower-case
           tags:  ${{secrets.DOCKER_HUB_USERNAME}}/tp-devops-database:latest
-
+          push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push httpd
         uses: docker/build-push-action@v3
@@ -68,4 +69,6 @@ jobs:
           context: ./http-server
           # Note: tags has to be all lower-case
           tags:  ${{secrets.DOCKER_HUB_USERNAME}}/tp-devops-httpd:latest
+          push: ${{ github.ref == 'refs/heads/main' }}
+
 
