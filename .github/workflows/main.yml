@@ -41,7 +41,7 @@ jobs:
 
       # Login to Docker Hub
       - name: Login to DockerHub
-        run: echo "$DOCKERHUB_USERNAME" | docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKER_HUB_PASSWORD"
+        run: docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKER_HUB_PASSWORD" | echo "$DOCKERHUB_USERNAME"
         shell: bash
 
       - name: Build image and push backend
