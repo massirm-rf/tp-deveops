@@ -10,13 +10,8 @@ on:
 jobs:
   # define job to build and publish docker image
   build-and-push-docker-image:
-    needs: test-backend
   # run only when code is compiling and tests are passing
     runs-on: ubuntu-22.04
-
-    env:
-      DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-      DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
   # steps to perform in job
     steps:
